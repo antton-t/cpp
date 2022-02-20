@@ -2,13 +2,12 @@
 
 int	main(void)
 {
-	Zombie	zouzou;
-	std::string	zonzon;
-
-	zonzon  =  "ZonZon";
+	Zombie newzon("Zombie create by newZombie");
 	std::cout << "Welcome to ZombieLand! Houuuuuu" << std::endl;
+	std::cout << "Zombie create by newZombie" << std::endl;
+	newzon = *(newZombie("newZombie"));
+	newzon.annouce();
 	std::cout << "Zombie create by randomChump" << std::endl;
-	this->zouzou.randomChump(zonzon);
-	zouzou.annouce();
+	randomChump("RandomChump");
 	return (1);
 }
