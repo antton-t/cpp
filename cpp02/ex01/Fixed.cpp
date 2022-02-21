@@ -33,9 +33,10 @@ int	Fixed::toInt(void) const
 	return(this->_floatValue);
 }
 
-void	Fixed::operator<<(Fixed const &i)
+std::ostream	&operator<<(std::ostream &ost, Fixed const &i)
 {
-	std::cout << this->_floatValue;
+	ost << i.toFloat();
+	return(ost);
 }
 
 Fixed	&Fixed::operator=(Fixed const &i)
@@ -43,4 +44,9 @@ Fixed	&Fixed::operator=(Fixed const &i)
 	this->_floatValue = i._floatValue;
 	std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
+}
+
+float	Fixed::toFloat(void)const
+{
+	return(this->_floatValue);
 }

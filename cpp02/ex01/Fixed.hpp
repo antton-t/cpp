@@ -14,14 +14,15 @@ class Fixed {
 
 	int		toInt(void) const;
 	float	toFloat( void ) const;
-	void	operator<<(Fixed const &i);
 	Fixed&	operator=(Fixed const &i);
 
 	private :
 
-	float				_floatValue;
+	int					_floatValue;
 	static const int	_fractPart = 8;
 
 };
+
+	std::ostream	&operator<<(std::ostream &ost, Fixed const &i);
 
 #endif
