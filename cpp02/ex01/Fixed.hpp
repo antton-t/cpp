@@ -2,6 +2,8 @@
 #define FIXED_HPP
 
 #include <iostream>
+#include <complex>
+#include <valarray>
 class Fixed {
 
 	public :

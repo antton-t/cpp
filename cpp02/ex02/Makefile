@@ -14,7 +14,7 @@ $(NAME) :  $(INCLUDE) $(OBJS)
 	clang++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	clang++ $(FLAGS) -c $< -I .
+	clang++ -c $< -I .
 
 clean : 
 	rm -rf $(OBJS)

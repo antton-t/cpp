@@ -7,13 +7,19 @@ Fixed::Fixed(void)
 
 Fixed::Fixed(int nb)
 {
-	this->_floatValue = nb;
+	int	power;
+
+	power = pow(2, this->_fractPart);
+	this->_floatValue = nb * power;
 	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(float fl)
 {
-	this->_floatValue = fl;
+	int	power;
+
+	power = pow(2, this->_fractPart);
+	this->_floatValue = roundf(fl * power);
 	std::cout << "Float constructor called" << std::endl;
 }
 
@@ -30,7 +36,12 @@ Fixed::~Fixed(void)
 
 int	Fixed::toInt(void) const
 {
-	return(this->_floatValue);
+	int	out;
+	int	power;
+
+	power = pow(2, this->_fractPart);
+	out = (int)this->_floatValue / power;
+	return(out);
 }
 
 std::ostream	&operator<<(std::ostream &ost, Fixed const &i)
@@ -48,5 +59,10 @@ Fixed	&Fixed::operator=(Fixed const &i)
 
 float	Fixed::toFloat(void)const
 {
-	return(this->_floatValue);
+	float	out;
+	int		power;
+
+	power = pow(2, this->_fractPart);
+	out = (float)this->_floatValue / power;
+	return (out);
 }
