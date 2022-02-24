@@ -1,9 +1,8 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->_name = name;
 	std::cout << "Constructor create ScavTrap " << this->_name << std::endl;
 }
 

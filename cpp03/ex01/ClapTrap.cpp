@@ -8,7 +8,7 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::ClapTrap(void)
 {
-	std::cout << "Constructor called " << this->_name << std::endl;
+	std::cout << "Constructor called " << this->_name << "ClapTrap" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
