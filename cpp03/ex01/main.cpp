@@ -1,14 +1,15 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+
 
 int main()
 {
-	ClapTrap Pif("antoine");
+    ScavTrap scav_red("Red");
+    ScavTrap scav_blue("Blue");
 
-	Pif.attack("eric");
-	Pif.takeDamage(6);
-	Pif.beRepaired(4);
-	Pif.takeDamage(3);
-	Pif.beRepaired(8);
-	Pif.takeDamage(17);
-	return (0);
+    scav_red.attack("Blue");
+    scav_red.guardGate();
+    scav_blue = scav_red;
+    scav_blue.guardGate();
+    return (0);
 }

@@ -3,12 +3,17 @@
 ClapTrap::ClapTrap(std::string name)
 {
 	this->_name = name;
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Constructor called " << this->_name << std::endl;
+}
+
+ClapTrap::ClapTrap(void)
+{
+	std::cout << "Constructor called " << this->_name << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called " << this->_name << std::endl;
 }
 
 void	ClapTrap::attack(const std::string& target)
