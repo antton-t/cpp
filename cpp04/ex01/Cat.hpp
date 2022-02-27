@@ -3,7 +3,7 @@
 
 #include "Animal.hpp"
 
-class Cat : virtual public Animal
+class Cat : virtual public Animal, virtual public Brain
 {
 	public :
 
@@ -11,6 +11,7 @@ class Cat : virtual public Animal
 	~Cat(void);
 
 	virtual void	makeSound(void) const;
+	virtual void	myBrain(void) const;
 
 	private :
 

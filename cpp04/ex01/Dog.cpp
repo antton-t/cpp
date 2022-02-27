@@ -15,3 +15,8 @@ void	Dog::makeSound(void) const
 {
 	std::cout << "The dog is barking" << std::endl;
 }
+
+void	Dog::myBrain(void) const
+{
+	std::cout << "Dog Brain" << std:endl;
+}

@@ -31,3 +31,23 @@ void	Animal::makeSound(void) const
 {
 	std::cout << "Animal does not have a Sound" << std::endl;
 }
+
+void	Animal::myBrain(void) const
+{
+	std::cout <<"All animal have a brain but not all have the same size" << std::endl;
+}
+
+static	Animal	**Animal::fill_animal(int i)
+{
+	Animal **out;
+	int		j = 0;
+
+	while (j != i)
+	{
+		if (i % 2 == 0)
+			out[i] = new Dog();
+		else
+			out[i] = new Cat();
+	}
+	return (out)
+}

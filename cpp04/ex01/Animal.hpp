@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+#include <Brain.hpp>
 
 class Animal
 {
@@ -15,6 +16,8 @@ class Animal
 
 	virtual void		makeSound(void) const;
 	std::string	getType(void) const;
+	virtual void		myBrain(void) const;
+	static Animal				**fill_animal(int i);
 
 	protected :
 

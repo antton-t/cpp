@@ -15,3 +15,8 @@ void	Cat::makeSound(void) const
 {
 	std::cout << "The cat is meowing" << std::endl;
 }
+
+void	Cat::myBrain(void) const
+{
+	std::cout << "Cat Brain" << std:endl;
+}
