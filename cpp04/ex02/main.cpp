@@ -7,8 +7,7 @@
 
 int main()
 {
-	int	N = 4;
-    const Animal *animal = new Animal();
+    int           N = 4;
     const Animal *dog = new Dog();
     const Animal *cat = new Cat();
 
@@ -23,8 +22,6 @@ int main()
 
     std::cout << std::endl;
     std::cout << "== Default Animal, Dog and Cat ==" << std::endl;
-    animal->makeSound();
-    animal->myBrain();
     dog->makeSound();
     dog->myBrain();
     cat->makeSound();
@@ -43,22 +40,21 @@ int main()
     std::cout << std::endl;
 
     std::cout << "== In array of animal ==" << std::endl;
-	for (int i = 0; i < N; i++){
-		std::cout << "#" << i << " ";  
-		arr_animal[i]->makeSound();
+    for (int i = 0; i < N; i++){
+       std::cout << "#" << i << " ";  
+        arr_animal[i]->makeSound();
         arr_animal[i]->myBrain();
-	}
+    }
     std::cout << std::endl;
 
-	for (int i = 0; i < N; i++){
-	delete arr_animal[i];
-	}
-	delete[] arr_animal;
+     for (int i = 0; i < N; i++){
+        delete arr_animal[i];
+    }
+    delete[] arr_animal;
     delete doggy;
     delete kitty;
     delete cpy_cat;
     delete cpy_dog;
-    delete animal;
     delete dog;
     delete cat;
     delete wrong_cat;
