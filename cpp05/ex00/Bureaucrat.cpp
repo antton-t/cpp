@@ -1,10 +1,5 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(void)
-{
-
-}
-
 Bureaucrat::Bureaucrat(std::string name, int i) : _name(name)
 {
 	if (i < 1)
@@ -20,7 +15,12 @@ Bureaucrat::~Bureaucrat(void)
 
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat const &src)
+Bureaucrat::Bureaucrat(void)
+{
+
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat &src)
 {
 	*this = src;
 }
@@ -68,23 +68,4 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)
 {
 	o << rhs.GetName() << " bureaucrat grade " << rhs.GetGrade();
 	return (o);
-}
-
-void Bureaucrat::signForm(Form &fo)
-{
-	try
-	{
-		if (fo.IsSigned() == true)
-			std::cout << "Form is already sign" << std::endl;
-		else
-		{
-			fo.beSigned(*this);
-			std::cout << this->_name << " signed " << fo.GetName() << std::endl;
-		}
-	}
-	catch (Form::GradeHighException & e)
-	{
-		std::cerr << this->_name << " couldn't sign " << fo.GetName() << " because " << e.what() << std::endl;
-	}
-	return ;
 }

@@ -75,12 +75,20 @@ void	Form::beSigned(Bureaucrat bureau)
 	if (this->_gradesign < bureau.GetGrade())
 		throw Form::GradeHighException();
 	else
-	{std::cout << "signed form\n";
+	{
 		this->_sign = true;
 	}
 }
 
-bool	Form::IsSigned(void)
+bool	Form::IsSigned(void) const
 {
 	return (this->_sign);
+}
+
+void	Form::execute(Bureaucrat const &executor) const
+{
+	if (this->_gradeexecute < executor.GetGrade())
+		throw Form::GradeHighException();
+	else
+		executor.executeForm(*this);
 }

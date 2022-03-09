@@ -12,17 +12,18 @@ class Form
 {
 	public :
 
-	Form(std::string name, int sign, int gradesign);
+	Form(std::string name, int execute, int sign);
 	Form(void);
-	~Form(void);
+	virtual ~Form(void);
 	Form(Form &fo);
 	Form &operator=(Form &fo);
 	
 	void		beSigned(Bureaucrat Bureau);
-	int		GetExecute(void) const;
-	bool		IsSigned(void);
+	int			GetExecute(void) const;
+	bool		IsSigned(void) const;
+	void		execute(Bureaucrat const &executor) const;
 	std::string	GetName(void) const;
-	int		GetGrade(void) const;
+	int			GetGrade(void) const;
 
 	public :
 

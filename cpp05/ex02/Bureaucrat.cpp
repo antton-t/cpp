@@ -70,7 +70,7 @@ std::ostream	&operator<<(std::ostream &o, Bureaucrat const &rhs)
 	return (o);
 }
 
-void Bureaucrat::signForm(Form &fo)
+void Bureaucrat::signForm(Form &fo) const
 {
 	try
 	{
@@ -87,4 +87,19 @@ void Bureaucrat::signForm(Form &fo)
 		std::cerr << this->_name << " couldn't sign " << fo.GetName() << " because " << e.what() << std::endl;
 	}
 	return ;
+}
+
+void	Bureaucrat::executeForm(Form const &form) const
+{
+	try
+	{
+		if (form.IsSigned() == false)
+			std::cout << "Form is not signed yet " << form.GetName() << " need to be signed first" << std::endl;
+		else
+			std::cout << this->GetName() << " executed " << form.GetName() << std::endl;
+	}
+	catch (Form::GradeHighException &e)
+	{
+		std::cerr << this->_name << " couldn't execute " << form.GetName() << " because " << e.what() << std::endl;
+	}
 }
