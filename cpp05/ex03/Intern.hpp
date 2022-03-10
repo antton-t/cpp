@@ -12,8 +12,15 @@ class Intern
 		Intern(Intern const &intern);
 		Intern& operator=(Intern const &intern);
 
-		Form	*makeForm(std::string &formname, std::string &target);
+		Form	*makeForm(std::string const &formname, std::string const &target);
 
+		class FormInternFail: public std::exception
+		{
+			public :
+
+			const char* what() const throw();
+		};
+	private :
 };
 
 #endif

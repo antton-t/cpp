@@ -3,125 +3,33 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
-	try	{
-		Form form("Formr1", 0, 150);
-		std::cout << form;
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
-		Form form("Formr2", 1, 0);
-		std::cout << form;
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
-		Form form("Formr3", 1, 151);
-		std::cout << form;
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
-		Form form("Formr4", 151, 1);
-		std::cout << form;
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
-		Bureaucrat hello("hello", 2);
-		Form form("Formr5", 1, 15);
-
-		std::cout << form;
-		hello.signForm(form);
-		std::cout << form;
-		hello.signForm(form);
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
-		Bureaucrat hello("hello", 16);
-		Form form("Formr6", 1, 15);
-
-		std::cout << form;
-		hello.signForm(form);
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
-		Bureaucrat hello("hello", 16);
-		Bureaucrat hi("hi", 1);
-		Form form("Formr7", 1, 15);
-
-		std::cout << form;
-		hello.signForm(form);
-		form.execute(hi);
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
+	try
+	{
+		Intern someRandomIntern;
+		Form* rrf;
 		Bureaucrat hello("hello", 15);
 		Bureaucrat hi("hi", 1);
-		Form form("Formr8", 1, 15);
 
-		std::cout << form;
-		hello.signForm(form);
-		form.execute(hi);
+		rrf = someRandomIntern.makeForm("Robotomy Request", "Bender");
+		std::cout << *rrf;
+		hello.signForm(*rrf);
+		rrf->execute(hi);
+		delete	rrf;
 	}
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
-		Bureaucrat hello("hello", 15);
-		Bureaucrat hi("hi", 1);
-		ShrubberyCreationForm form("Formr9");
-
-		std::cout << form;
-		hello.signForm(form);
-		form.execute(hi);
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
-		Bureaucrat hello("hello", 15);
-		Bureaucrat hi("hi", 1);
-		RobotomyRequestForm form("Formr9");
-
-		std::cout << form;
-		hello.signForm(form);
-		form.execute(hi);
-	}
-	catch (std::exception & e) {
-		std::cerr << e.what() << std::endl;
-	}
-	std::cout << "------------------------------" << std::endl;
-	try	{
-		Bureaucrat hello("hello", 15);
-		Bureaucrat hi("hi", 1);
-		PresidentialPardonForm form("Formr10");
-
-		std::cout << form;
-		hello.signForm(form);
-		form.execute(hi);
+	std::cout << "---------------------------------------------" << std::endl;
+	try
+	{
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("Hello", "Bender");
+		delete	rrf;
 	}
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;

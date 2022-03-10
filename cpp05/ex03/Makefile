@@ -8,12 +8,14 @@ SRCS =	main.cpp \
 	ShrubberyCreationForm.cpp \
 	RobotomyRequestForm.cpp \
 	PresidentialPardonForm.cpp \
+	Intern.cpp \
 
 INCLUDE =	Bureaucrat.hpp \
 		Form.hpp \
 		ShrubberyCreationForm.hpp \
 		PresidentialPardonForm.hpp \
 		RobotomyRequestForm.hpp \
+		Intern.hpp \
 
 OBJS = $(SRCS:%.cpp=%.o)
 
