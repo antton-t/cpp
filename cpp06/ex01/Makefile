@@ -10,10 +10,10 @@ OBJS = $(SRCS:%.cpp=%.o)
 all : $(NAME)
 
 $(NAME) :   $(OBJS)
-	clang++ $(FLAGS) $(OBJS) -o $(NAME)
+	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	clang++ $(FLAGS) -c $< -I .
+	c++ $(FLAGS) -c $< -I .
 
 
 clean :

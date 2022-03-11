@@ -19,10 +19,10 @@ OBJS = $(SRCS:%.cpp=%.o)
 all : $(NAME)
 
 $(NAME) :  $(INCLUDE) $(OBJS)
-	clang++ $(FLAGS) $(OBJS) -o $(NAME)
+	c++ $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	clang++ $(FLAGS) -c $< -I .
+	c++ $(FLAGS) -c $< -I .
 
 
 clean :
@@ -32,5 +32,4 @@ fclean : clean
 	rm -rf $(NAME)
 
 re : fclean all
-
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re 

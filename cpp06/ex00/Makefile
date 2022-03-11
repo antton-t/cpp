@@ -1,25 +1,29 @@
 NAME = convert
 
+CC = c++
+
 FLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98 -MMD -MP
 
 SRCS =	main.cpp 
 
 OBJS = $(SRCS:%.cpp=%.o)
 
+DEP = $(OBJS:.o=.d)
+
 all : $(NAME)
 
 $(NAME) :  $(OBJS)
-	clang++ $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 
 %.o : %.cpp
-	clang++ $(FLAGS) -c $< -I .
+	$(CC) $(FLAGS) -c $< -I .
 
 
 clean :
 	rm -rf $(OBJS)
 	rm -rf *.d
 
--include $(OBJS:.o=.d)
+-include $(DEP)
 
 fclean : clean
 	rm -rf $(NAME)

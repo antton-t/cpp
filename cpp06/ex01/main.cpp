@@ -32,7 +32,7 @@ int main()
 	printData(&a);
 	resl = serialize(&a);
 	res = deserialize(resl);
-	std::cout << resl << std::endl;
+//	std::cout << resl << std::endl;
 	printData(res);
 	return (0);
 }
